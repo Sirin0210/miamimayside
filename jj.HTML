@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ร้านสินค้ามือสอง</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      min-height: 100vh;
+      background-image: url(MIAMI.jpg); /* เปลี่ยนเป็นชื่อภาพของคุณ */
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      flex-direction: row;
+    }
+
+    .menu-toggle {
+      display: none;
+      background-color: #333;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 999;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      padding: 20px;
+      height: 100vh;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      margin-top: 20px;
+      border-bottom: 1px solid #666;
+      padding-bottom: 5px;
+    }
+
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      padding: 5px;
+      border-radius: 4px;
+    }
+
+    .sidebar a:hover {
+      background-color: #555;
+    }
+
+    .menu-item.has-sub a {
+      background-color: #444;
+    }
+
+    .submenu {
+      display: none;
+      padding-left: 15px;
+    }
+
+    .menu-item.has-sub:hover .submenu {
+      display: block;
+    }
+
+    .content-box {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      margin: 20px;
+      border-radius: 10px;
+      overflow-y: auto;
+    }
+
+    .product {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .sidebar {
+        display: none;
+        width: 100%;
+        height: auto;
+      }
+
+      .sidebar.active {
+        display: block;
+      }
+
+      .content-box {
+        margin: 10px;
+        border-radius: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ปุ่มเมนู (แสดงเฉพาะจอเล็ก) -->
+  <button class="menu-toggle" onclick="toggleMenu()">เมนู</button>
+
+  <!-- แถบเมนู -->
+  <div class="sidebar">
+    <h2>หมวดสินค้า สาขา บางปู สมุทรปราการ</h2>
+<div class="menu-item has-sub">
+      <a href="#">ของใช้ภายในบ้าน</a>
+      <div class="submenu">
+        <a href="#">Daruma Japan bangpu</a>
+        <a href="#">Luckyhome bangpu</a>
+        <a href="#">M-Box</a>
+        <a href="#">Yamato Japan</a>
+      </div>
+    </div>
+    
+     <div class="menu-item has-sub">      
+<a href="#">เสื้อผ้า</a>
+      <div class="submenu">
+        <a href="CP.HTML">Changpong Tribe</a>
+        <a href="#">Daruma Express MIAMI BAYSIDE</a>
+        <a href="#">LH Colthe</a>
+      </div>
+    </div>
+ <div class="menu-item has-sub">
+      <a href="#">ของเล่น ฟิกเกอร์ โมเดล</a>
+      <div class="submenu">
+        <a href="#">Namba Japan Toys</a>
+      </div>
+    </div>    
+    <a href="#">เครื่องใช้ไฟฟ้า</a>
+
+    <h2>หมวดสินค้า สาขา ตลาดปัฐวิกรณ์</h2>
+    <div class="menu-item has-sub">
+      <a href="#">เสื้อผ้า</a>
+      <div class="submenu">
+        <a href="#">Daruma Express Pattavikorn</a>
+      </div>
+    </div>
+    <a href="#">ของเล่น</a>
+
+    <h2>หมวดสินค้า สาขาเชียงใหม่</h2>
+    <a href="#">เสื้อผ้า</a>
+    <a href="#">ของเล่น</a>
+  </div>
+
+  <!-- กล่องเนื้อหา -->
+  <div class="content-box">
+    <h1>โกดังสินค้าญี่ปุ่นมือ2 ที่ใหญ่ที่สุดในสมุทรปราการ</h1>
+    <h2>ลดราคาทุกวัน สูงสุดถึง 90%</h2>
+
+    <div class="product">
+      <h2>เสื้อผ้าญี่ปุ่นมือ2</h2>
+      <p>ขายแบบชั่งกิโล เริ่มต้นกิโลกรัมละ 300 บาท</p>
+    </div>
+
+    <div class="product">
+      <h2>ฟิกเกอร์วันพีซ</h2>
+      <p>ของแท้จากญี่ปุ่น ราคา 850 บาท</p>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    function toggleMenu() {
+      const sidebar = document.querySelector('.sidebar');
+      sidebar.classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
